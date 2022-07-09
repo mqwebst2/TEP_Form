@@ -5,10 +5,47 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Vite App</title>
+    <title>TEP Form</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <form action="">
+        <label for="full-name">Name:</label>
+        <input type="text" id="full-name" name="full-name" /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" /><br /><br />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" cols="40" rows="10"></textarea
+        ><br /><br />
+
+        <label for="dropdown">Dropdown Selector:</label>
+        <select id="dropdown" name="dropdown">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option></select
+        ><br /><br />
+
+        <input type="checkbox" id="form-checkbox-1" name="form-checkbox" />
+        <label for="form-checkbox-1">Option 1</label>
+        <input type="checkbox" id="form-checkbox-2" name="form-checkbox" />
+        <label for="form-checkbox-2">Option 2</label>
+        <input type="checkbox" id="form-checkbox-3" name="form-checkbox" />
+        <label for="form-checkbox-3">Option 3</label><br /><br />
+
+        <input type="radio" id="true" name="form-radio" />
+        <label for="true">True</label>
+        <input type="radio" id="false" name="form-radio" />
+        <label for="false">False</label><br /><br />
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
