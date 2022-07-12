@@ -5,17 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="main.js"></script>
     <title>TEP Form</title>
   </head>
   <body>
     <div id="app">
       <!--Web Form-->
-      <form>
+      <form id="form" name="form">
+        <h1>New Test Form</h1>
         <div>
-          <label for="full-name">Name:</label>
+          <label for="full-name"><strong>Name:</strong></label>
           <input type="text" id="full-name" name="full-name" /><br /><br />
 
-          <label for="email">Email:</label>
+          <label for="email"><strong>*Email: </strong></label>
           <input
             required
             minlength="3"
@@ -30,12 +32,13 @@
             class="validation-message"
           ></div>
 
-          <label for="date">Date:</label>
+          <label for="date"><strong>Date:</strong></label>
           <input type="date" id="date" name="date" /><br /><br />
 
-          <label for="message">Message:</label>
+          <label for="message"><strong>*Message: </strong></label>
           <textarea
             required
+            minlength="3"
             id="message"
             name="message"
             cols="40"
@@ -49,7 +52,7 @@
             class="validation-message"
           ></div>
 
-          <label for="dropdown">Dropdown Selector:</label>
+          <label for="dropdown"><strong>Dropdown Selector:</strong></label>
           <select id="dropdown" name="dropdown">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -57,37 +60,54 @@
             <option value="4">4</option></select
           ><br /><br />
 
-          <input
-            required
-            type="checkbox"
-            id="form-checkbox-1"
-            name="form-checkbox"
-          />
-          <label for="form-checkbox-1">Option 1</label>
-          <input
-            required
-            type="checkbox"
-            id="form-checkbox-2"
-            name="form-checkbox"
-          />
-          <label for="form-checkbox-2">Option 2</label>
-          <input
-            required
-            type="checkbox"
-            id="form-checkbox-3"
-            name="form-checkbox"
-          />
-          <label for="form-checkbox-3">Option 3</label><br /><br />
+          <fieldset>
+            <legend id="checkbox-legend">
+              <strong>*Please select one of the following options: </strong>
+            </legend>
 
-          <input type="radio" id="true" name="form-radio" />
+            <input
+              required
+              type="checkbox"
+              id="form-checkbox-1"
+              name="form-checkbox"
+              value="Option 1"
+            />
+            <label for="form-checkbox-1">Option 1</label><br />
+            <input
+              required
+              type="checkbox"
+              id="form-checkbox-2"
+              name="form-checkbox"
+              value="Option 2"
+            />
+            <label for="form-checkbox-2">Option 2</label><br />
+            <input
+              required
+              type="checkbox"
+              id="form-checkbox-3"
+              name="form-checkbox"
+              value="Option 3"
+            />
+            <label for="form-checkbox-3">Option 3</label><br /><br />
+          </fieldset>
+
+          <input type="radio" id="true" name="form-radio" value="True" />
           <label for="true">True</label>
-          <input type="radio" id="false" name="form-radio" />
+          <input type="radio" id="false" name="form-radio" value="False" />
           <label for="false">False</label><br /><br />
 
-          <button type="submit">Submit</button>
+          <input
+            type="submit"
+            id="submit-button"
+            value="Submit"
+            onclick="submitOutput();"
+          />
         </div>
       </form>
     </div>
-    <script type="module" src="main.js"></script>
+
+    <div id="output">
+      <h1>Your form responses:</h1>
+    </div>
   </body>
 </html>
